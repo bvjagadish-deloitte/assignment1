@@ -1,0 +1,3 @@
+select * from Fixtures where venue='Bangalore'
+
+select Team_name from team_details where Team_name in(select team_lost from fixtures where venue='Kolkata')
