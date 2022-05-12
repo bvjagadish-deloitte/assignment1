@@ -1,0 +1,24 @@
+CREATE TABLE team_details(Sl_no INT NOT NULL PRIMARY KEY,Team_name VARCHAR(30) NOT NULL,
+						  Captain VARCHAR(30) NOT NULL , Owner VARCHAR(30) NOT NULL,
+						 Home_Ground VARCHAR(30) NOT NULL,Dummy_column INT NOT NULL)
+						
+CREATE TABLE Fixtures(Match_Number INT NOT NULL PRIMARY KEY,Home_Team VARCHAR(30) NOT NULL,
+					 Away_Team VARCHAR(30) NOT NULL,Venue VARCHAR(30) NOT NULL,
+					 Team_Won VARCHAR(30) NOT NULL,Team_Lost VARCHAR(30) NOT NULL,Dummy_column INT NOT NULL)
+
+
+CREATE TABLE Points(Team_name VARCHAR(30) NOT NULL,No_of_wins INT NOT NULL,
+				   NO_of_losses INT NOT NULL,points INT NOT NULL)
+				   
+select * from team_details					 
+select * from Fixtures
+select * from points					 
+COPY PUBLIC."team_details" FROM 'C:\Users\bvjagadish\Desktop\Assignmnet\team-details.csv' DELIMITER ',' CSV HEADER
+
+
+select * from team_details
+select count(team_name) from team_details
+
+
+					 
+COPY PUBLIC."Fixtures" FROM 'C:\Users\bvjagadish\Desktop\Assignmnet\Fixtures.csv' DELIMITER ',' CSV HEADER			 
