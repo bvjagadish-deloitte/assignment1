@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "87b54235-16e6-4d72-8899-a557d76d7c12",
+		"name": "API-Collection-B Venkata Jagadish",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Milestone 3(1)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJson=pm.response.json();\r",
+							"pm.test(\"user id is 4 and id is 40\",function(){\r",
+							"    pm.except(responseJson.id).to.eql(40);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Milestone 3(2)",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Milestone 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJson=pm.response.json();\r",
+							"pm.test(\"Test email\",function(){\r",
+							"    pm.except(responseJson.email).to.eql(\"amith.k@reqres.in\");\r",
+							"    pm.except(responseJson.first_name).to.eql(\"Amit\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"amith.k@reqres.in\",\r\n     \"first_name\": \"Amit\",\r\n      \"last_name\": \"K\",\r\n       \"avatar\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

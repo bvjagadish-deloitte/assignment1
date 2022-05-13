@@ -1,0 +1,32 @@
+#%RAML 1.0
+title: GetWeather
+mediaType:
+  - application/json
+version: v1
+protocols:
+  - HTTP
+/milestone1:
+  get:
+    responses:
+      "200":
+        body:
+          application/json:
+            type: NewDataType
+types:
+  NewDataType:
+    properties:
+      id:
+        example: "2482"
+        type: string
+      name:
+        example: Kartik Kocchar
+        type: string
+      email:
+        example: Karthik_kocchar@rurtherford.io
+        type: string
+      gender:
+        example: female
+        type: string
+      status:
+        example: inactive
+        type: string

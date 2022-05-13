@@ -1,0 +1,36 @@
+#%RAML 1.0
+title: New API
+types:
+  Response:
+    properties:
+      userdeatils:
+        items:
+          properties:
+            post_id:
+              example: "2003"
+              type: string
+            id:
+              example: "1978"
+              type: string
+            name:
+              example: Bhaaswar Pothuvval III
+              type: string
+  RequestBody:
+    properties:
+      post_id:
+        example: "203"
+        type: string
+mediaType:
+  - application/json
+protocols:
+  - HTTP
+/new-resource:
+  post:
+    body:
+      application/json:
+        type: RequestBody
+    responses:
+      "201":
+        body:
+          application/json:
+            type: Response
